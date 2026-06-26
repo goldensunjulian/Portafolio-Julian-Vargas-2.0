@@ -1,0 +1,141 @@
+header {
+    background-color: black;
+}
+
+body {
+    background: linear-gradient(to right, #ffffff, #262323);
+
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: right;
+    gap: 20px;
+    padding: 20px;
+}
+
+ul a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 21px;
+    transition: 1s;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+li:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+li {
+    transition: 1s;
+}
+
+ul a:hover {
+    background-color: aliceblue;
+    color: black;
+    transition: 1s;
+}
+
+#sm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#img-sobre-mi {
+    width: 85%;
+    border-style: solid;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+#texto {
+    grid-column: span 2;
+    text-align: justify;
+    padding-right: 5%;
+    font-size: 130%;
+}
+
+#conocimientos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 95%;
+    text-align: center;
+    gap: 5%;
+margin-left: 2%;
+}
+
+#conocimientos h3 {
+    text-align: center;
+
+    font-size: 110%;
+}
+
+.lenguajes {
+    border-style: solid;
+    transition: 1s;
+    margin-top: 10%;
+    border-radius: 5%;
+}
+
+.lenguajes:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 10px 10px black;
+}
+
+.lenguajes img {
+    width: 50%;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: absolute;
+    width: 95%;
+    border: 10px solid;
+    border-image: linear-gradient(to right, #262323, #ffffff) 1;
+    padding-left: 3%;
+
+    text-align: center;
+    margin-top: 5%;
+    align-items: center;
+}
+
+#contactos {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    padding: 2%;
+    justify-items: center;
+}
+
+#contactos div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#contactos div a {
+    font-size: 0;
+    display: block;
+    width: 1%;
+    margin-right: 50%;
+}
+
+#contactos div img {
+    width: 6000%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 0.2vw solid rgb(0, 0, 0);
+    transition: transform 0.3s ease;
+}
+
+#contactos div img:hover {
+    transform: scale(1.2);
+}

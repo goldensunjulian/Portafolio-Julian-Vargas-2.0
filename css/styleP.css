@@ -1,0 +1,131 @@
+body {
+    background: linear-gradient(to right, #262323, #ffffff, #262323);
+}
+
+nav {
+    background-color: black;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: right;
+    gap: 20px;
+    padding: 20px;
+}
+li:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+ul a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 25px;
+    padding: 21px;
+}
+
+ul a:hover {
+    background-color: aliceblue;
+    color: black;
+}
+
+section {
+    border-style: solid;
+}
+
+#titulo {
+    text-align: center;
+    font-size: 200%;
+    background-image: url(../resources/fondo2.jpg);
+    color: white;
+}
+
+#proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 30px;
+
+    background-image: url(../resources/fondo.jpg);
+}
+#proyectos div{
+    border-radius: 5%;
+}
+#proyectos div img{
+    border-radius: 50%;
+}
+#proyectos div {
+    border-style: solid;
+    margin: 10%;
+    text-align: center;
+    padding: 5%;
+    transition: 1s;
+    background-image: url(https://img.freepik.com/vector-gratis/fondo-ondulado-azul_1035-7705.jpg?semt=ais_hybrid&w=740&q=80);
+}
+
+#proyectos div img {
+    width: 50%;
+    border-style: solid;
+    color: black;
+}
+div a{
+    font-size: 0%;
+}
+#proyectos div:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+body {
+    background-color: rgb(34, 34, 34);
+}
+
+
+
+/* --- FOOTER Y CONTACTOS --- */
+
+footer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: absolute;
+    width: 95%;
+    border: 10px solid;
+    border-image: linear-gradient(to right, #262323, #ffffff) 1;
+    padding-left: 3%;
+
+    text-align: center;
+    margin-top: 5%;
+    align-items: center;
+}
+
+#contactos {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    padding: 2%;
+    justify-items: center;
+}
+
+#contactos div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#contactos div a {
+    font-size: 0;
+    display: block;
+    width: 1%;
+    margin-right: 50%;
+}
+
+#contactos div img {
+    width: 6000%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 0.2vw solid rgb(0, 0, 0);
+    transition: transform 0.3s ease;
+}
+
+#contactos div img:hover {
+    transform: scale(1.2);
+}
