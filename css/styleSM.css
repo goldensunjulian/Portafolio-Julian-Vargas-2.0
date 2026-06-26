@@ -68,7 +68,7 @@ ul a:hover {
     width: 95%;
     text-align: center;
     gap: 5%;
-margin-left: 2%;
+    margin-left: 2%;
 }
 
 #conocimientos h3 {
@@ -138,4 +138,105 @@ footer {
 
 #contactos div img:hover {
     transform: scale(1.2);
+}
+
+/* =========================================
+   MEDIA QUERIES - RESPONSIVE (CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+    ul {
+        justify-content: center;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    ul a {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    /* Imagen y texto en 1 columna vertical */
+    #sm {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    #texto {
+        grid-column: span 1;
+        padding: 0 5%;
+    }
+
+    #img-sobre-mi {
+        width: 60%;
+        /* Reducir la imagen en móviles */
+        margin: 20px auto;
+    }
+
+    /* Tarjetas de conocimiento a 2 columnas */
+    #conocimientos {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        margin: 0 auto;
+        gap: 15px;
+    }
+
+    /* Reestructurar Footer */
+    footer {
+        grid-template-columns: 1fr;
+        position: relative;
+        margin-top: 40px;
+        padding: 20px 0;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #contactos div a {
+        width: 40px;
+        margin: 0 auto;
+    }
+
+    #contactos div img {
+        width: 100%;
+    }
+
+
+}
+
+/* Regla extra para celulares muy angostos (pantallas menores a 480px) */
+@media (max-width: 480px) {
+    #conocimientos {
+        grid-template-columns: 1fr;
+        /* 1 sola columna para pantallas muy estrechas */
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px){
+    footer{
+        margin-top: 15%;
+        margin-left: -1%;
+    }    
+    #conocimientos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 95%;
+        text-align: center;
+        gap: 5%;
+        margin-left: 2%;
+    }
+        #sm {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    #texto {
+        grid-column: span 1;
+        padding: 0 5%;
+    }
+
+    #img-sobre-mi {
+        width: 60%;
+        /* Reducir la imagen en móviles */
+        margin: 20px auto;
+    }
+
 }
