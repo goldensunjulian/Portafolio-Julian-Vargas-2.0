@@ -1,190 +1,117 @@
+/* ============================================================
+   STYLEP.CSS - Estilos específicos de PROYECTOS
+   ============================================================ */
+
 body {
-    background: linear-gradient(to right, #262323, #ffffff, #262323);
+    background-color: #1a1a1a;
+    background-image: linear-gradient(135deg, #1a1a1a 0%, #2e2e2e 50%, #1a1a1a 100%);
+    color: #f0f0f0;
+    min-height: 100vh;
 }
 
-nav {
-    background-color: black;
-}
-
-ul {
-    display: flex;
-    list-style: none;
-    justify-content: right;
-    gap: 20px;
-    padding: 20px;
-}
-
-li:hover {
-    transform: scale(1.1);
-    transition: 1s;
-}
-
-ul a {
-    text-decoration: none;
-    color: aliceblue;
-    font-size: 25px;
-    padding: 21px;
-}
-
-ul a:hover {
-    background-color: aliceblue;
-    color: black;
-}
-
-section {
-    border-style: solid;
-}
-
+/* ---------- TÍTULO DE LA PÁGINA ---------- */
 #titulo {
     text-align: center;
-    font-size: 200%;
-    background-image: url(../resources/fondo2.jpg);
-    color: white;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1c1c2e 50%, #0f0f0f 100%);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
 }
 
+/* Línea decorativa detrás del título */
+#titulo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(80, 80, 180, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+#titulo h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(150, 150, 255, 0.5);
+    position: relative;
+}
+
+/* ---------- GRILLA DE PROYECTOS ---------- */
 #proyectos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 30px;
-
-    background-image: url(../resources/fondo.jpg);
+    gap: 24px;
+    margin: 40px auto;
+    padding: 0 5%;
+    max-width: 1200px;
 }
 
 #proyectos div {
-    border-radius: 5%;
-}
-
-#proyectos div img {
-    border-radius: 50%;
-}
-
-#proyectos div {
-    border-style: solid;
-    margin: 10%;
+    background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
     text-align: center;
-    padding: 5%;
-    transition: 1s;
-    background-image: url(https://img.freepik.com/vector-gratis/fondo-ondulado-azul_1035-7705.jpg?semt=ais_hybrid&w=740&q=80);
-}
-
-#proyectos div img {
-    width: 50%;
-    border-style: solid;
-    color: black;
-}
-
-div a {
-    font-size: 0%;
+    padding: 24px 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #proyectos div:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
 }
 
-body {
-    background-color: rgb(34, 34, 34);
+#proyectos div h1 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 12px;
 }
 
-
-
-/* --- FOOTER Y CONTACTOS --- */
-
-footer {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    position: absolute;
-    width: 95%;
-    border: 10px solid;
-    border-image: linear-gradient(to right, #262323, #ffffff) 1;
-    padding-left: 3%;
-
-    text-align: center;
-    margin-top: 5%;
-    align-items: center;
+#proyectos div h4 {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin-top: 10px;
+    font-weight: normal;
+    line-height: 1.5;
 }
 
-#contactos {
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
-    padding: 2%;
-    justify-items: center;
+#proyectos div a {
+    display: inline-block;
+    font-size: 0;        /* oculta texto del enlace, muestra solo la imagen */
 }
 
-#contactos div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-#contactos div a {
-    font-size: 0;
-    display: block;
-    width: 1%;
-    margin-right: 50%;
-}
-
-#contactos div img {
-    width: 6000%;
-    aspect-ratio: 1 / 1;
+#proyectos div img {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: 0.2vw solid rgb(0, 0, 0);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-#contactos div img:hover {
-    transform: scale(1.2);
+#proyectos div img:hover {
+    transform: scale(1.15);
 }
 
-/* =========================================
-   MEDIA QUERIES - RESPONSIVE (CELULARES)
-   ========================================= */
+/* ---------- FOOTER ---------- */
+footer {
+    margin-top: 40px;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
 @media (max-width: 768px) {
-    ul {
-        justify-content: center;
-        padding: 10px;
-        flex-wrap: wrap;
+    #titulo h1 {
+        font-size: 2rem;
     }
 
-    ul a {
-        padding: 10px;
-        font-size: 18px;
-    }
-
-    /* Proyectos a 1 columna */
     #proyectos {
         grid-template-columns: 1fr;
-        margin: 10px;
-    }
-
-    /* Reestructurar Footer */
-    footer {
-        grid-template-columns: 1fr;
-        position: relative;
-        margin-top: 40px;
-        padding: 20px 0;
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    #contactos div a {
-        width: 40px;
-        margin: 0 auto;
-    }
-
-    #contactos div img {
-        width: 100%;
+        padding: 0 5%;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-
-    footer {
-        margin-left: -1%;
-    }
-
     #proyectos {
         grid-template-columns: repeat(2, 1fr);
     }

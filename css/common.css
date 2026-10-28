@@ -1,0 +1,153 @@
+/* ============================================================
+   COMMON.CSS - Estilos compartidos por todas las páginas
+   (reset, variables, nav, footer, contactos, media queries)
+   ============================================================ */
+
+/* ---------- RESET BÁSICO ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- VARIABLES DE COLOR ---------- */
+:root {
+    --color-oscuro: #262323;
+    --color-claro: #ffffff;
+    --color-acento: aliceblue;
+    --color-header: #000000;
+    --icono-size: 70px;
+}
+
+/* ---------- HEADER Y NAVEGACIÓN ---------- */
+header,
+nav {
+    background-color: var(--color-header);
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: right;
+    gap: 20px;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul a {
+    color: var(--color-claro);
+    font-size: 20px;
+    padding: 21px;
+    transition: 1s;
+}
+
+li {
+    transition: 1s;
+}
+
+li:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+ul a:hover {
+    background-color: var(--color-acento);
+    color: var(--color-header);
+    transition: 1s;
+}
+
+/* ---------- FOOTER ----------
+   position: relative para que el borde llegue al 100% del ancho real.
+   Cada página ajusta su margin-top si necesita.
+*/
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    width: 100%;
+    border-top: 6px solid;
+    border-bottom: 6px solid;
+    /* El borde lateral usa outline para que llegue siempre al borde */
+    border-image: linear-gradient(to right, var(--color-oscuro), var(--color-claro), var(--color-oscuro)) 1;
+    padding: 20px 3%;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: var(--color-claro);
+}
+
+footer h4 {
+    color: var(--color-claro);
+}
+
+/* ---------- ÍCONOS DE CONTACTO ----------
+   El <a> es el área clickeable y ya tiene forma circular con border-radius: 50%.
+   No hay zona cuadrada invisible: pointer-events solo sobre el círculo.
+*/
+#contactos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px 0;
+    justify-items: center;
+    gap: 10px;
+}
+
+#contactos div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contactos div a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icono-size);
+    height: var(--icono-size);
+    border-radius: 50%;          /* el área clickeable es circular */
+    overflow: hidden;            /* recorta la imagen al círculo */
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contactos div a:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+#contactos div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* llena el círculo sin distorsión */
+    display: block;
+    border-radius: 0;            /* el recorte lo hace el overflow:hidden del <a> */
+    transition: none;            /* la transición está en el <a> */
+}
+
+/* ---------- MEDIA QUERIES COMUNES ---------- */
+@media (max-width: 768px) {
+    ul {
+        justify-content: center;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    ul a {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        padding: 20px 0;
+    }
+
+    :root {
+        --icono-size: 50px;
+    }
+}
