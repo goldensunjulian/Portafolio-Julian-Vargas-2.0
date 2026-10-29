@@ -12,6 +12,11 @@
     padding: 0;
 }
 
+html, body {
+    overflow-x: hidden; /* evita scroll horizontal en cualquier página */
+    max-width: 100%;
+}
+
 /* ---------- VARIABLES DE COLOR ---------- */
 :root {
     --color-oscuro: #262323;
